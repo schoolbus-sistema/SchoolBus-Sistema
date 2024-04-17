@@ -3,13 +3,13 @@
 public class Veiculo {
     private String placa;
     private String modelo;
-    private int ano;
-    private int capacidade;
-    private int tipo;
+    private Integer ano;
+    private Integer capacidade;
+    private Integer tipo;
     private Contrato contrato;
    
 
-    public Veiculo(String placa, String modelo, int ano, int capacidade, int tipo, Contrato contrato) {
+    public Veiculo(String placa, String modelo, Integer ano, Integer capacidade, Integer tipo, Contrato contrato) {
         this.placa = placa;
         this.modelo = modelo;
         this.ano = ano;
@@ -23,7 +23,7 @@ public class Veiculo {
     }
 
 
-    public Veiculo(String placa, String modelo, int ano, int capacidade, int tipo) {
+    public Veiculo(String placa, String modelo, Integer ano, Integer capacidade, Integer tipo) {
         this.placa = placa;
         this.modelo = modelo;
         this.ano = ano;
@@ -46,19 +46,19 @@ public class Veiculo {
     public int getAno() {
         return this.ano;
     }
-    public void setAno(int ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
     public int getCapacidade() {
         return this.capacidade;
     }
-    public void setCapacidade(int capacidade) {
+    public void setCapacidade(Integer capacidade) {
         this.capacidade = capacidade;
     }
     public int getTipo() {
         return this.tipo;
     }
-    public void setTipo(int tipo) {
+    public void setTipo(Integer tipo) {
         this.tipo = tipo;
     }
     public Contrato getContrato() {
