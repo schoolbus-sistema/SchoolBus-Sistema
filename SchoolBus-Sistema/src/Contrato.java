@@ -46,7 +46,7 @@ public class Contrato {
         this.valor = valor;
     }
     public void adicionarVeiculos(Veiculo veiculos){
-        if(veiculos.getTipo() == 1){
+        if((veiculos.getTipo()) == 1){
             this.veiculos.add(veiculos);
         }else{
             throw new IllegalArgumentException(" Veiculo não é alugado");
