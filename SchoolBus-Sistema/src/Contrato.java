@@ -1,14 +1,18 @@
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Contrato {
+    ArrayList<Veiculo> veiculos = new ArrayList<Veiculo>();
     private int numContrato;
     private Date dataInicial;
     private Date dataFinal;
+    private Double valor;
 
-    public Contrato(int numContrato, Date dataInicial, Date dataFinal) {
+    public Contrato(int numContrato, Date dataInicial, Date dataFinal,Double valor) {
         this.numContrato = numContrato;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
+        this.valor = valor;
 
     }
     public int getNumContrato() {
@@ -29,4 +33,29 @@ public class Contrato {
     public void setDataFinal(Date dataFinal) {
         this.dataFinal = dataFinal;
     }
+    public ArrayList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+    public void setVeiculos(ArrayList<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+    public Double getValor() {
+        return valor;
+    }
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+    public void adicionarVeiculos(Veiculo veiculos){
+        if(veiculos.getTipo() == 1){
+            this.veiculos.add(veiculos);
+        }else{
+            throw new IllegalArgumentException(" Veiculo não é alugado");
+        }
+        
+    }
+    
+    public void removerVeiculos(Veiculo veiculo){
+        this.veiculos.remove(veiculo);
+    }
+
 }

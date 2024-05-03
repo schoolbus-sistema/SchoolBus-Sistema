@@ -1,5 +1,6 @@
 import java.util.Date;
-
+// Alunos: Caique Menezes,William Gomes
+//,Lucas Eduardo, João Phillipe Fernandes
 public class Motorista {
     private String nomeCivil,nome,mae,pai,naturalidade,cpfCnpj,rua,complemento,bairro,telefone,numHabilitacao,tipoHabilitacao,numContrato;//Caso o nome social não seja informado, este deve ser preenchido com o nome civil. 
     private Integer numero,tipo;
