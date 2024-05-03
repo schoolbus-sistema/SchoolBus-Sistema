@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Contrato {
     ArrayList<Veiculo> veiculos = new ArrayList<Veiculo>();
+    ArrayList< Motorista> motoristas = new ArrayList< Motorista>();
     private int numContrato;
     private Date dataInicial;
     private Date dataFinal;
@@ -58,4 +59,30 @@ public class Contrato {
         this.veiculos.remove(veiculo);
     }
 
+    public void adicionarMotorista( Motorista motorista){
+        if(motorista.getTipo() == 1){
+            this.motoristas.add(motorista);
+        }
+        else{
+            throw new IllegalArgumentException("Esse motorista não é terceirizado");
+        }
+    }
+    public void removerMotoristas(String cpfMotorista){
+        if(this.motoristas == null || this.motoristas.isEmpty()){
+            
+         throw new IllegalArgumentException("Esse contrato não possui motoristas");
+
+        }
+        else{
+            for( int i = 0; i < this.motoristas.size(); i++){
+                if(this.motoristas.get(i).getCpfCnpj().equals(cpfMotorista)){
+                    this.motoristas.remove(i);
+                    break;
+                }
+                
+            }
+        }
+       
+
+    }
 }
