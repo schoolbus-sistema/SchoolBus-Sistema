@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 // Alunos: Caique Menezes,William Gomes
 //,Lucas Eduardo, João Phillipe Fernandes
@@ -6,6 +7,7 @@ public class Motorista {
     private Integer numero,tipo;
     private Date dataDeNascimento;
     private Contrato contrato;
+    private ArrayList<Contrato> contratos = new ArrayList<Contrato>();
    
 
     public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao,String numContrato, Integer numero,Integer tipo,Date dataDeNascimento, Contrato contrato) {
@@ -257,5 +259,26 @@ public class Motorista {
         }
     }
     
-        
+    public void adicionarContratos(Contrato contrato){
+        if( this.tipo == 1){
+            this.contratos.add(contrato);
+        }
+        else{
+            throw new IllegalArgumentException("Esse motorista não é terceirizado");
+        }
+    }
+    
+    public void removerContrato(int numeroContrato){
+        if(this.contratos == null || this.contratos.isEmpty()){
+
+            throw new IllegalArgumentException("Esse motorista não possui contratos");
+        }
+        else{
+            for ( int i = 0; i < this.contratos.size(); i++){
+                if(this.contratos.get(i).getNumContrato()== numeroContrato){
+                    this.contratos.remove(i);
+                }
+            }
+        }
+    }
     }
