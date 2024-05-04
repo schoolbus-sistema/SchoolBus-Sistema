@@ -16,6 +16,13 @@ public class Contrato {
         this.valor = valor;
 
     }
+    @Override
+    public String toString() {
+        return "Numero de contrato: " + getNumContrato() + ", Data inicial: " + getDataInicial() + ", Data final: " + getDataFinal() ;
+    }
+
+
+
     public int getNumContrato() {
         return numContrato;
     }
@@ -62,6 +69,7 @@ public class Contrato {
     public void adicionarMotorista( Motorista motorista){
         if(motorista.getTipo() == 1){
             this.motoristas.add(motorista);
+            System.out.println("Motorista adicionado com sucesso");
         }
         else{
             throw new IllegalArgumentException("Esse motorista não é terceirizado");
@@ -70,19 +78,30 @@ public class Contrato {
     public void removerMotoristas(String cpfMotorista){
         if(this.motoristas == null || this.motoristas.isEmpty()){
             
-         throw new IllegalArgumentException("Esse contrato não possui motoristas");
+         throw new IllegalArgumentException("Esse motorista não está vinculado a esse contrato");
 
         }
         else{
             for( int i = 0; i < this.motoristas.size(); i++){
                 if(this.motoristas.get(i).getCpfCnpj().equals(cpfMotorista)){
                     this.motoristas.remove(i);
-                    break;
+                    System.err.println("Motorista removiddo com sucesso");
+                    
                 }
                 
             }
         }
        
 
+    }
+
+    public void exibirMotoristas(){
+        if(this.motoristas == null || this.motoristas.isEmpty()){
+            throw new IllegalArgumentException("Esse contrato não possui motoristas");
+
+        }
+        for( int i = 0; i < this.motoristas.size(); i++){
+            System.out.println(this.motoristas.get(i).toString());
+        }
     }
 }
