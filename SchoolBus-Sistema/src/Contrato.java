@@ -104,4 +104,17 @@ public class Contrato {
             System.out.println(this.motoristas.get(i).toString());
         }
     }
+
+    public void pintarCasa(String c) {
+
+        String cor = c;
+        System.out.println(cor);
+    
+    } 
+    public void pintarCasa() {   
+       String cor = "branco";
+       System.out.println(cor);
+    
+    } 
 }
+

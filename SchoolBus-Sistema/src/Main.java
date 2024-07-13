@@ -66,17 +66,18 @@ public class Main {
     
         // teste de realções entre motorista e contratos    OBS: está ocorrendo associação de dados.
 
-        Date hoje = new Date(20240503);
-        Contrato contratoTeste = new Contrato(012345, hoje, hoje, 10000.00);
-        Motorista caique = new Motorista("Caique Aurelio Silva Menezes", "Caique", "Luzia Aguiar","Carlos Aurelio", "brasileiro", "0000000", "Caminho de Areia", "Rua Monetiro Lobato", "Roma", "1234567", "09876", "56789", null, 76, 1, hoje, contratoTeste);
+       // Date hoje = new Date(20240503);
+        //Contrato contratoTeste = new Contrato(012345, hoje, hoje, 10000.00);
+       // Motorista caique = new Motorista("Caique Aurelio Silva Menezes", "Caique", "Luzia Aguiar","Carlos Aurelio", "brasileiro", "0000000", "Caminho de Areia", "Rua Monetiro Lobato", "Roma", "1234567", "09876", "56789", null, 76, 1, hoje, contratoTeste);
 
-        caique.adicionarContratos(contratoTeste);
-        contratoTeste.adicionarMotorista(caique);
-        caique.exibirContratos();
-        caique.removerContrato(012345);
-        contratoTeste.exibirMotoristas();
-
-
+        //caique.adicionarContratos(contratoTeste);
+        //contratoTeste.adicionarMotorista(caique);
+       // caique.exibirContratos();
+       // caique.removerContrato(012345);
+       // contratoTeste.exibirMotoristas();
+       
+        contratoMotorista.pintarCasa();
+        contratoMotorista.pintarCasa("vermelho");
 
 
 
@@ -99,4 +100,16 @@ public class Main {
 
 
     }
+
+    public void pintarCasa(String c) {
+
+        String cor = c;
+        System.out.println(cor);
+    
+    } 
+    public void pintarCasa() {   
+       String cor = "branco";
+       System.out.println(cor);
+    
+    } 
 }

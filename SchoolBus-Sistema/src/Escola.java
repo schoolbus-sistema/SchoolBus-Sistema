@@ -16,10 +16,7 @@ class Escola{
     String cnpj;
     String telefone;
     Endereco endereco;
-    String rua;
-    int numero;
-    String complemento;
-    String bairro;
+    
 
     public Escola(String aluno, String cnpj, String telefone, Endereco endereco){
         this.aluno=aluno;
@@ -32,10 +29,7 @@ class Escola{
         this.aluno=aluno;
         this.cnpj=cnpj;
         this.telefone=telefone;
-        this.bairro = bairro;
-        this.complemento = complemento;
-        this.numero = numero;
-        this.rua = rua;
+       	this.endereco=Endereco(bairro,complemento,numero,rua);
     }
     
     
