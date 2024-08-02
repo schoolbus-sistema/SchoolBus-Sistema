@@ -9,18 +9,18 @@ public class Aluno {
     private String cpf;
     private Date dataNascimento;
     private String rua;
-    private Integer numero;
+    private int numero;
     private String complemento;
     private String bairro;
     private String telefone;
-    private Integer matricula;
+    private int matricula;
     private String serie;
     private Escola escola;
     private Rota rota;
     
     public Aluno(String nomeCivil, String nome, String mae, String pai, String naturalidade, String cpf,
-                 Date dataNascimento, String rua, Integer numero, String complemento, String bairro,
-                 String telefone, Integer matricula, String serie) {
+                 Date dataNascimento, String rua, int numero, String complemento, String bairro,
+                 String telefone, int matricula, String serie) {
         this.nomeCivil = nomeCivil;
         this.nome = nome;
         this.mae = mae;
@@ -103,7 +103,7 @@ public class Aluno {
         this.rua = rua;
     }
 
-    public Integer getNumero() {
+    public int getNumero() {
         return numero;
     }
 
@@ -135,7 +135,7 @@ public class Aluno {
         this.telefone = telefone;
     }
 
-    public Integer getMatricula() {
+    public int getMatricula() {
         return matricula;
     }
 

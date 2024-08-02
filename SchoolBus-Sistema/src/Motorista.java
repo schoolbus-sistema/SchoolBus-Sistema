@@ -4,13 +4,13 @@ import java.util.Date;
 //,Lucas Eduardo, João Phillipe Fernandes
 public class Motorista {
     private String nomeCivil,nome,mae,pai,naturalidade,cpfCnpj,rua,complemento,bairro,telefone,numHabilitacao,tipoHabilitacao,numContrato;//Caso o nome social não seja informado, este deve ser preenchido com o nome civil. 
-    private Integer numero,tipo;
+    private int numero,tipo;
     private Date dataDeNascimento;
     private Contrato contrato;
     private ArrayList<Contrato> contratos = new ArrayList<Contrato>();
    
 
-    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao,String numContrato, Integer numero,Integer tipo,Date dataDeNascimento, Contrato contrato) {
+    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao,String numContrato, int numero,int tipo,Date dataDeNascimento, Contrato contrato) {
         this.nomeCivil = nomeCivil;
         if (nome != null) {
            this.nome = nome;
@@ -39,7 +39,7 @@ public class Motorista {
     }
     
 
-    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao, Integer numero,Integer tipo,Date dataDeNascimento) {
+    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao, int numero,int tipo,Date dataDeNascimento) {
         this.nomeCivil = nomeCivil;
         if (nome != null) {
            this.nome = nome;
