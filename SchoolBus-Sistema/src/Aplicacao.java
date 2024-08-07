@@ -225,6 +225,33 @@ public class Aplicacao {
             
             break;
         case "7":
+                Rota rota = new Rota();
+                System.out.println("Rota criada com sucesso deseja adicionar pontos de parada? S para sim N para não");
+                String criar = sc.next();
+                if(criar.equalsIgnoreCase("S")){
+                    System.out.println("Digite o nome do ponto de parada que deseja cadastrar: ");
+                    String nomePonto = sc.next();
+                    System.out.println("Digite a latitude do ponto de parada: ");
+                    String latitude = sc.next();
+                    System.out.println("Digite a longitude do ponto de parada: ");
+                    String longitude = sc.next();
+                    System.out.println("Digite o id do ponto de parada: ");
+                    int idPontoDeParad = sc.nextInt();
+                    System.out.println("Deseja cadastrar algum aluno nesse ponto?S para sim N para não");
+                    String cadastrar = sc.next();
+                        if (cadastrar.equalsIgnoreCase("S")){
+                            break;
+                        }else if(cadastrar.equalsIgnoreCase("N")){
+                            break;
+                        }else{
+                            break;
+                        }
+                }else if (criar.equalsIgnoreCase("N")) {
+                    System.out.println("Certo, rota criada com o ID:"+rota.getId());
+                    
+                }else{
+                    System.out.println("Resposta inválida");
+                }
             break;
         case "8":
             break;
