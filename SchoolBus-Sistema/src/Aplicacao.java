@@ -222,29 +222,43 @@ public class Aplicacao {
            
             break;
         case "6":
-            
-            break;
+        System.out.println("Digite o nome do ponto de parada que deseja cadastrar: ");
+        String nomePonto = sc.next();
+        System.out.println("Digite a latitude do ponto de parada: ");
+        double latitude = sc.nextDouble();
+        System.out.println("Digite a longitude do ponto de parada: ");
+        double longitude = sc.nextDouble();
+        System.out.println("Digite o id do ponto de parada: ");
+        int idPontoDeParad = sc.nextInt();
+        PontoDeParada ponto = new PontoDeParada(nomePonto,latitude,longitude,idPontoDeParad);
+        System.out.println("Ponto de parada criado com sucesso!");
+        break;
+
         case "7":
                 Rota rota = new Rota();
                 System.out.println("Rota criada com sucesso deseja adicionar pontos de parada? S para sim N para não");
                 String criar = sc.next();
                 if(criar.equalsIgnoreCase("S")){
                     System.out.println("Digite o nome do ponto de parada que deseja cadastrar: ");
-                    String nomePonto = sc.next();
+                    nomePonto = sc.next();
                     System.out.println("Digite a latitude do ponto de parada: ");
-                    String latitude = sc.next();
+                    latitude = sc.nextDouble();
                     System.out.println("Digite a longitude do ponto de parada: ");
-                    String longitude = sc.next();
+                    longitude = sc.nextDouble();
                     System.out.println("Digite o id do ponto de parada: ");
-                    int idPontoDeParad = sc.nextInt();
+                    idPontoDeParad = sc.nextInt();
+                    ponto = new PontoDeParada(nomePonto,latitude,longitude,idPontoDeParad);
                     System.out.println("Deseja cadastrar algum aluno nesse ponto?S para sim N para não");
                     String cadastrar = sc.next();
                         if (cadastrar.equalsIgnoreCase("S")){
                             break;
                         }else if(cadastrar.equalsIgnoreCase("N")){
+                            rota.adicionarPontoDeParada(ponto);
+                            System.out.println("Ponto adicionado com sucesso!");
                             break;
                         }else{
-                            break;
+                            System.out.println("Opção inválida");
+                            continue;
                         }
                 }else if (criar.equalsIgnoreCase("N")) {
                     System.out.println("Certo, rota criada com o ID:"+rota.getId());

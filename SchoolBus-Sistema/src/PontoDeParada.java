@@ -22,6 +22,15 @@ public class PontoDeParada {
         totalPontosDeParada++;
     }
 
+    public PontoDeParada(String nome, double latitude, double longitude, int id) {
+        this.nome = nome;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.id = id;
+        // Incrementa o total de pontos de parada ao criar um novo objeto
+        totalPontosDeParada++;
+    }
+
     // Getters e Setters
     public String getNome() {
         return nome;
