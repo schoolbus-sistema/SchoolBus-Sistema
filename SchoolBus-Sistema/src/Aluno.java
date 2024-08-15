@@ -16,11 +16,11 @@ public class Aluno {
     private int matricula;
     private String serie;
     private Escola escola;
-    private Rota rota;
-    
+    private PontoDeParada pontoDeParada;
+
     public Aluno(String nomeCivil, String nome, String mae, String pai, String naturalidade, String cpf,
-                 Date dataNascimento, String rua, int numero, String complemento, String bairro,
-                 String telefone, int matricula, String serie) {
+            Date dataNascimento, String rua, int numero, String complemento, String bairro,
+            String telefone, int matricula, String serie) {
         this.nomeCivil = nomeCivil;
         this.nome = nome;
         this.mae = mae;
@@ -36,9 +36,9 @@ public class Aluno {
         this.matricula = matricula;
         this.serie = serie;
     }
-    
+
     // Getters e Setters
-    
+
     public String getNomeCivil() {
         return nomeCivil;
     }

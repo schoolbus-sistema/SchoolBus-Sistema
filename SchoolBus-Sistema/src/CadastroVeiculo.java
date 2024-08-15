@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class CadastroVeiculo {
     Scanner sc = new Scanner(System.in);
 
-    public Veiculo cadastrarVeiculo() throws ParseException{
+    public Veiculo cadastrarVeiculo() throws ParseException {
 
         System.out.println("Digite o número da placa do veículo que deseja cadastrar: ");
         String placa = sc.next();
@@ -30,7 +30,7 @@ public class CadastroVeiculo {
                     + " do ano " + ano + " com capacidade: " + capacidade +
                     "\n e cadastrado como carro alugado no numero de contrato" + contratoVeiculo.getNumContrato() +
                     "\n com data de início do contrato de" + contratoVeiculo.getDataInicial() +
-                    "\n com data de início do contrato de" + contratoVeiculo.getDataFinal()+
+                    "\n com data de início do contrato de" + contratoVeiculo.getDataFinal() +
                     "\n com valor de" + contratoVeiculo.getValor() +
                     "\n Foi cadastrado com sucesso!");
             return veiculo;
