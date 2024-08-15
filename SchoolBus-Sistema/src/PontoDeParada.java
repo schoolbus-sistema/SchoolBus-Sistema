@@ -81,4 +81,8 @@ public class PontoDeParada {
     public static void exibirTotalPontosDeParada() {
         System.out.println("Número total de pontos de parada criados: " + totalPontosDeParada);
     }
+
+    public void cadastrarAluno(Aluno aluno) {
+        alunos.add(aluno);
+    }
 }

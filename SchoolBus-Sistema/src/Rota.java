@@ -30,7 +30,7 @@ class Rota {
     public int calcularDemandaTotal() {
         int demandaTotal = 0;
         for (PontoDeParada ponto : pontosDeParada) {
-            demandaTotal += ponto.calcularDemandaTotal();
+            demandaTotal = ponto.getTotalPontosDeParada();
         }
         return demandaTotal;
     }
