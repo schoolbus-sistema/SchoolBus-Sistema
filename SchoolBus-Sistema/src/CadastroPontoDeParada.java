@@ -1,12 +1,9 @@
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
-import java.text.ParseException;
 
 public class CadastroPontoDeParada {
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     Scanner sc = new Scanner(System.in);
 
-    public PontoDeParada cadastrarPontoDeParada() throws ParseException {
+    public PontoDeParada cadastrarPontoDeParada() {
 
         System.out.println("Digite o nome do ponto de parada que deseja cadastrar: ");
         String nomePonto = sc.next();

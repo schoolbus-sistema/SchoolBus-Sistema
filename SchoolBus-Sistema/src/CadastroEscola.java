@@ -1,12 +1,9 @@
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
-import java.text.ParseException;
 
 public class CadastroEscola {
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     Scanner sc = new Scanner(System.in);
 
-    public Escola cadastrarEscola() throws ParseException {
+    public Escola cadastrarEscola() {
 
         System.out.println("Digite o nome da Escola que deseja cadastrar: ");
         String nomeEscola = sc.next();
