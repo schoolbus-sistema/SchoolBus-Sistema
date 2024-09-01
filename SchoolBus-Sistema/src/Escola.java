@@ -27,7 +27,7 @@ class Escola extends PessoaJuridica{
     }
 
     
-    public Escola(String nome, string nomeFantasia,string nomeOficial, string cpfCnpj, string telefone, int numFuncionario, String cnpj, String bairro, String complemento, int numero, String rua) {
+    public Escola(String nome, string nomeFantasia,string nomeOficial, string cpfCnpj, string telefone, int numFuncionario, String bairro, String complemento, int numero, String rua) {
         super(nomeOficial, cpfCnpj, telefone, nomeFantasia, numFuncionario);
         this.nome = nome;
         this.endereco = new Endereco(bairro, complemento, numero, rua);

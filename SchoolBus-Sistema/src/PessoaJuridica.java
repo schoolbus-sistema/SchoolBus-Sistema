@@ -27,6 +27,11 @@ public class PessoaJuridica extends Pessoa {
         this.numFuncionario = numFuncionario;
     }
 
-
+    @Override
+    public void apresentarDados(){
+        super.apresentarDados();
+        System.out.println("Nome Fantasia: " + nomeFantasia);
+        System.out.println("Número de funcionarios: " + numFuncionario);
+    }
 
 }
