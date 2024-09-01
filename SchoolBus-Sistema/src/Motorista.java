@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 // Alunos: Caique Menezes,William Gomes
 //,Lucas Eduardo, João Phillipe Fernandes
-public class Motorista {
+public class Motorista extends PessoaFisica {
     private String nomeCivil,nome,mae,pai,naturalidade,cpfCnpj,rua,complemento,bairro,telefone,numHabilitacao,tipoHabilitacao,numContrato;//Caso o nome social não seja informado, este deve ser preenchido com o nome civil. 
     private int numero,tipo;
     private Date dataDeNascimento;
@@ -10,7 +10,8 @@ public class Motorista {
     private ArrayList<Contrato> contratos = new ArrayList<Contrato>();
    
 
-    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao,String numContrato, int numero,int tipo,Date dataDeNascimento, Contrato contrato) {
+    public Motorista(String nomeCivil,String nomeOficial, String cpf, Endereco endereco, String telefone, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro, String numHabilitacao,String tipoHabilitacao,String numContrato, int numero,int tipo,Date dataDeNascimento, Contrato contrato) {
+        super(nomeOficial, cpf, endereco, telefone, nome, mae, pai, naturalidade, dataDeNascimento);
         this.nomeCivil = nomeCivil;
         if (nome != null) {
            this.nome = nome;
@@ -39,21 +40,18 @@ public class Motorista {
     }
     
 
-    public Motorista(String nomeCivil, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String telefone,String numHabilitacao,String tipoHabilitacao, int numero,int tipo,Date dataDeNascimento) {
+    public Motorista(String nomeCivil,String nomeOficial, String cpf, Endereco endereco, String telefone, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String numHabilitacao,String tipoHabilitacao, int numero,int tipo,Date dataDeNascimento) {
+        super(nomeOficial, cpf, endereco, telefone);
         this.nomeCivil = nomeCivil;
         if (nome != null) {
            this.nome = nome;
         } else{
             this.nome = nomeCivil;
         }
-        this.mae = mae;
-        this.pai = pai;
-        this.naturalidade = naturalidade;
-        this.cpfCnpj = cpfCnpj;
+
         this.rua = rua;
         this.complemento = complemento;
         this.bairro = bairro;
-        this.telefone = telefone;
         this.numHabilitacao = numHabilitacao;
         this.tipoHabilitacao = tipoHabilitacao;
         this.numero = numero;
@@ -83,45 +81,6 @@ public class Motorista {
         this.nome = nome;
     }
 
-
-    public String getMae() {
-        return mae;
-    }
-
-
-    public void setMae(String mae) {
-        this.mae = mae;
-    }
-
-
-    public String getPai() {
-        return pai;
-    }
-
-
-    public void setPai(String pai) {
-        this.pai = pai;
-    }
-
-
-    public String getNaturalidade() {
-        return naturalidade;
-    }
-
-
-    public void setNaturalidade(String naturalidade) {
-        this.naturalidade = naturalidade;
-    }
-
-
-    public String getCpfCnpj() {
-        return cpfCnpj;
-    }
-
-
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
-    }
 
 
     public String getRua() {
@@ -153,15 +112,6 @@ public class Motorista {
         this.bairro = bairro;
     }
 
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
 
 
     public String getNumHabilitacao() {
@@ -201,16 +151,6 @@ public class Motorista {
 
     public void setTipo(Integer tipo) {
         this.tipo = tipo;
-    }
-
-
-    public Date getDataDeNascimento() {
-        return dataDeNascimento;
-    }
-
-
-    public void setDataDeNascimento(Date dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento;
     }
 
 
@@ -308,4 +248,27 @@ public class Motorista {
         }
         
     }
+    @Override
+    public void apresentarDados() {
+        super.apresentarDados(); // Chama o método da classe Pessoa
+        System.out.println("Nome Civil: " + nomeCivil);
+        System.out.println("Nome Social: " + nome);
+        System.out.println("Mãe: " + mae);
+        System.out.println("Pai: " + pai);
+        System.out.println("Naturalidade: " + naturalidade);
+        System.out.println("CPF/CNPJ: " + cpfCnpj);
+        System.out.println("Rua: " + rua);
+        System.out.println("Número: " + numero);
+        System.out.println("Complemento: " + complemento);
+        System.out.println("Bairro: " + bairro);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Número de Habilitação: " + numHabilitacao);
+        System.out.println("Tipo de Habilitação: " + tipoHabilitacao);
+        System.out.println("Data de Nascimento: " + dataDeNascimento);
+        if (tipo == 1) {
+            System.out.println("Número do Contrato: " + numContrato);
+        }
+        System.out.println("Tipo de Motorista: " + (tipo == 1 ? "Terceirizado" : "Servidor"));
+  
     }
+}

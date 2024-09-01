@@ -14,28 +14,22 @@ Implemente um construtor para a classe Escola que permita inicializar todos os a
 
 
 
-class Escola {
-    String nome;
-    String cnpj;
-    String telefone;
-    Endereco endereco;
+class Escola extends PessoaJuridica{
+    private String nome;
     ArrayList<Aluno> alunosMatriculados;
     
 
 
-    public Escola(String nome, String cnpj, String telefone, Endereco endereco) {
+    public Escola(String nome, string nomeOficial, string cpfCnpj, string telefone, string nomeFantasia, int numFuncionario, Endereco endereco) {
+        super(nomeOficial, cpfCnpj, endereco, telefone, nomeFantasia, numFuncionario);
         this.nome = nome;
-        this.cnpj = cnpj;
-        this.telefone = telefone;
-        this.endereco = endereco;
         this.alunosMatriculados = new ArrayList<>();
     }
 
     
-    public Escola(String nome, String cnpj, String telefone, String bairro, String complemento, int numero, String rua) {
+    public Escola(String nome, string nomeFantasia,string nomeOficial, string cpfCnpj, string telefone, int numFuncionario, String cnpj, String bairro, String complemento, int numero, String rua) {
+        super(nomeOficial, cpfCnpj, telefone, nomeFantasia, numFuncionario);
         this.nome = nome;
-        this.cnpj = cnpj;
-        this.telefone = telefone;
         this.endereco = new Endereco(bairro, complemento, numero, rua);
         this.alunosMatriculados = new ArrayList<>();
     }
@@ -81,5 +75,19 @@ class Escola {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+   
+    @Override
+    public void apresentarDados() {
+        super.apresentarDados(); 
+        System.out.println("Nome da Escola: " + nome);
+        System.out.println("Alunos Matriculados: ");
+        if (alunosMatriculados.isEmpty()) {
+            System.out.println("Nenhum aluno matriculado.");
+        } else {
+            for (Aluno aluno : alunosMatriculados) {
+                System.out.println(aluno.toString());
+            }
+        }
     }
 }
