@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 public class Aplicacao {
     /*
@@ -21,6 +22,8 @@ public class Aplicacao {
 
     public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
+        ArrayList<Contrato> listaDeContratos = new ArrayList<Contrato>();
+        ArrayList<Fornecedor> listaFornecedores = new ArrayList<Fornecedor>();
         String resposta = "";
         Aluno aluno=null;
         Motorista motorista=null;
@@ -29,8 +32,8 @@ public class Aplicacao {
 
         while (resposta != "0") {
             System.out.println("""
-                    ~~~~~ Bem-vindo a aplicacao SchoolBus! ~~~~~
-                       ~~~~~ Digite uma opcao a baixo ~~~~~
+                    ~~~~~ Bem-vindo a aplicação SchoolBus! ~~~~~
+                       ~~~~~ Digite uma opção a baixo ~~~~~
                                  1-Criar Aluno
                                  2-Criar Motorista
                                  3-Criar Contrato
@@ -42,29 +45,32 @@ public class Aplicacao {
                                  9-Total de pontos de paradas
                                  10-Exibir informações detalhadas de Aluno
                                  11-Exibir informações detalhadas de Motorista
-                                 12-
-                                 13-
-                                 14-Exibir o tipo de uma Pessoa
+                                 12-Exibir informações detalhadas de Escola
+                                 13-Exibir informações detalhadas de Fornecedor
+                                 14-Exibir o tipo de uma Pessoa  
+                                 15-Cadastrar Fornecedor     
+                                 16-Adicionar Fornecedor ao Contrato                     
                                  0-Sair
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""");
             resposta = sc.next();
             switch (resposta) {
                 case "1":
                     CadastroAluno cadastroAluno = new CadastroAluno();
-                    Aluno aluno = cadastroAluno.cadastrarAluno();
+                    aluno = cadastroAluno.cadastrarAluno();
                     break;
                 case "2":
                     CadastroMotorista cadastroMotorista = new CadastroMotorista();
-                    Motorista motorista = cadastroMotorista.cadastrarMotorista();
+                    motorista = cadastroMotorista.cadastrarMotorista();
 
                     break;
                 case "3":
                     CadastroContrato cadastroContrato = new CadastroContrato();
                     Contrato contrato = cadastroContrato.cadastrarContrato();
+                    listaDeContratos.add(contrato);
                     break;
                 case "4":
                     CadastroEscola cadastroEscola = new CadastroEscola();
-                    Escola escola = cadastroEscola.cadastrarEscola();
+                    escola = cadastroEscola.cadastrarEscola();
                     break;
                 case "5":
                     CadastroVeiculo cadastroVeiculo = new CadastroVeiculo();
@@ -105,7 +111,15 @@ public class Aplicacao {
                     }
                     break;
                 case "12":
+                    if (escola != null){
+                        escola.apresentarDados();
+                    }
+                    break;
                 case "13":
+                    if (fornecedor != null){
+                        fornecedor.apresentarDados();
+                    }
+                    break;
                 case "14":
                     System.out.println("Selecione uma pessoa para exibir o tipo: \n1 - Aluno n\2 - Motorista n\3 - Escola n\4 - Fornecedor");
                     String tipoPessoa = sc.next();
@@ -125,7 +139,24 @@ public class Aplicacao {
                         System.out.println("Pessoa não cadastrada.");
                     }
                     break;
-
+                case "15":
+                    CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
+                    fornecedor = cadastroFornecedor.cadastrarFornecedor();
+                    listaFornecedores.add(fornecedor);
+                    break;
+                case "16":
+                    System.out.println("Digite o número do contrato que deseja adicionar um fornecedor");
+                    int numContrato = sc.nextInt();
+                    Contrato contratoBusca = BuscarContrato(listaDeContratos, numContrato);
+                    System.out.println("Digite o CNPJ do fornecedor que deseja vincular ao contrato");
+                    String cnpjFornecedor = sc.next();
+                    Fornecedor fornecedorBusca = BuscarFornecedor(listaFornecedores, cnpjFornecedor);
+                    if (contratoBusca != null && fornecedorBusca != null) {
+                        contratoBusca.adicionarFornecedor(fornecedorBusca);
+                    } else {
+                        System.out.println("Contrato ou Fornecedor não encontrado!");
+                    }
+                    break;
                 case "0":
                     System.out.println("~~~ Programa finalizado! ~~~");
                     resposta = "0";
@@ -137,5 +168,22 @@ public class Aplicacao {
         }
 
     }
-
+public static Contrato BuscarContrato(ArrayList<Contrato> lista, int valor) {
+        Contrato resposta = null;
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getNumContrato() == valor) {
+                resposta = lista.get(i);
+            }
+        }
+        return resposta;
+    }
+public static Fornecedor BuscarFornecedor(ArrayList<Fornecedor> lista, String valor) {
+    Fornecedor resposta = null;
+    for (int i = 0; i < lista.size(); i++) {
+        if (lista.get(i).getCNPJ().equals(valor)) {
+                resposta = lista.get(i);
+        }
+    }
+    return resposta;
+    }
 }

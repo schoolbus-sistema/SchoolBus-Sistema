@@ -58,4 +58,15 @@ public class Fornecedor extends PessoaJuridica {
         return "Fornecedor";
     }
 
+    public void adicionarFornecedor(Fornecedor fornecedor) {
+        if (fornecedor.getClass() == Fornecedor.class) {
+            this.fornecedores.add(fornecedor);
+            System.out.println("Fornecedor adicionado");
+        } else if (fornecedor.getClass().getSuperclass() == PessoaJuridica.class) {
+            this.fornecedores.add(fornecedor);
+        } else {
+            throw new IllegalArgumentException("Não existe fornecedor cadastrado com esses dados");
+        }
+    }
+
 }
