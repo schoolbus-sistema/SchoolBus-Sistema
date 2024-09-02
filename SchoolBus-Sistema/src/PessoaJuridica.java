@@ -12,7 +12,10 @@ public class PessoaJuridica extends Pessoa {
 
     // Getters e Setters
     public String getNomeFantasia() {
-        return nomeFantasia;
+        return nomeOficial;
+
+    }public String getCNPJ(){
+        return cpfCnpj;
     }
 
     public void setNomeFantasia(String nomeFantasia) {
@@ -26,6 +29,7 @@ public class PessoaJuridica extends Pessoa {
     public void setNumFuncionario(int numFuncionario) {
         this.numFuncionario = numFuncionario;
     }
+    
 
     @Override
     public void apresentarDados(){

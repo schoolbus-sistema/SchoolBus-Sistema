@@ -10,9 +10,9 @@ public class PessoaFisica extends Pessoa {
     protected Date dataNascimento; // Data de nascimento da pessoa
 
     // Construtor
-    public PessoaFisica(String nomeOficial, String cpf, Endereco endereco, String telefone,
+    public PessoaFisica(String nomeOficial, String cpfCnpj, Endereco endereco, String telefone,
                         String nome, String mae, String pai, String naturalidade, Date dataNascimento) {
-        super(nomeOficial, cpf, endereco, telefone); // Chamada ao construtor da classe base Pessoa
+        super(nomeOficial, cpfCnpj, endereco, telefone);
         this.nome = nome;
         this.mae = mae;
         this.pai = pai;
@@ -22,6 +22,12 @@ public class PessoaFisica extends Pessoa {
 
     public String getNome() {
         return nome;
+    }
+    public string  getNomeCivil(){
+        return nomeOficial;
+    }
+    public string getCPF(){
+        return cpfCnpj;
     }
 
     public void setNome(String nome) {
