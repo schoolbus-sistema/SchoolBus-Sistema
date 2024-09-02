@@ -90,4 +90,9 @@ class Escola extends PessoaJuridica{
             }
         }
     }
+    
+    @Override
+    public String verificarTipo() {
+        return "Escola";
+    }
 }

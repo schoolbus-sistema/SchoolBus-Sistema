@@ -47,6 +47,9 @@
             System.out.println("Endereço: " + (endereco != null ? endereco.toString() : "Não informado"));
         }
        
+        public String verificarTipo(){
+            return "Pessoa";
+       }
     }
     
 

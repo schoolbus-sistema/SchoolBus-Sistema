@@ -282,4 +282,8 @@ public class Motorista extends PessoaFisica {
         this.cpfCnpj = cpfCnpj;
     }
     
+    @Override
+    public String verificarTipo() {
+        return "Motorista";
+    }
 }

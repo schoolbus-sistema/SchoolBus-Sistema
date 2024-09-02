@@ -112,5 +112,8 @@ public class Aluno extends PessoaFisica {
         System.out.println("Escola: " + (escola != null ? escola.toString() : "Não informado"));
         System.out.println("Ponto de Parada: " + (pontoDeParada != null ? pontoDeParada.toString() : "Não informado"));
     }
-
+    @Override
+    public String verificarTipo() {
+        return "Aluno";
+    }
 }

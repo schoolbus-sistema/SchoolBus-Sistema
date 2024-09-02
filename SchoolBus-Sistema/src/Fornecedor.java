@@ -53,5 +53,9 @@ public class Fornecedor extends PessoaJuridica {
         exibirContratos();
     }
 
-    
+    @Override
+    public String verificarTipo(){
+        return "Fornecedor";
+    }
+
 }
