@@ -10,7 +10,7 @@ public class Motorista extends PessoaFisica {
     private ArrayList<Contrato> contratos = new ArrayList<Contrato>();
    
 
-    public Motorista(String nomeCivil,String nomeOficial, String cpf, Endereco endereco, String telefone, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro, String numHabilitacao,String tipoHabilitacao,String numContrato, int numero,int tipo,Date dataDeNascimento, Contrato contrato) {
+    public Motorista(String nomeCivil,String nomeOficial, String cpf, String telefone, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro, String numHabilitacao,int numero,int tipo,Date dataDeNascimento, Contrato contrato) {
         super(nomeOficial, cpf, endereco, telefone, nome, mae, pai, naturalidade, dataDeNascimento);
         this.nomeCivil = nomeCivil;
         if (nome != null) {
@@ -41,7 +41,7 @@ public class Motorista extends PessoaFisica {
     
 
     public Motorista(String nomeCivil,String nomeOficial, String cpf, Endereco endereco, String telefone, String nome, String mae, String pai, String naturalidade,String cpfCnpj,String rua,String complemento,String bairro,String numHabilitacao,String tipoHabilitacao, int numero,int tipo,Date dataDeNascimento) {
-        super(nomeOficial, cpf, endereco, telefone);
+        super(nomeOficial, cpf, endereco, telefone, tipoHabilitacao, tipoHabilitacao, tipoHabilitacao, tipoHabilitacao, dataDeNascimento);
         this.nomeCivil = nomeCivil;
         if (nome != null) {
            this.nome = nome;
@@ -271,4 +271,15 @@ public class Motorista extends PessoaFisica {
         System.out.println("Tipo de Motorista: " + (tipo == 1 ? "Terceirizado" : "Servidor"));
   
     }
+
+
+    public String getCpfCnpj() {
+        return cpfCnpj;
+    }
+
+
+    public void setCpfCnpj(String cpfCnpj) {
+        this.cpfCnpj = cpfCnpj;
+    }
+    
 }

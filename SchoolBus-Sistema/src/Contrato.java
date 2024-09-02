@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Contrato {
     ArrayList<Veiculo> veiculos = new ArrayList<Veiculo>();
     ArrayList<Motorista> motoristas = new ArrayList<Motorista>();
+    ArrayList<Fornecedor> fornecedores = new ArrayList<Fornecedor>();
     private int numContrato;
     private Date dataInicial;
     private Date dataFinal;
@@ -112,4 +113,12 @@ public class Contrato {
             System.out.println(this.motoristas.get(i).toString());
         }
     }
+
+    public void adicionarFornecedor(Fornecedor fornecedor) {
+        if(fornecedor.getClass() == Fornecedor.class) {
+            this.fornecedores.add(fornecedor);
+        }
+    }
+        
+
 }

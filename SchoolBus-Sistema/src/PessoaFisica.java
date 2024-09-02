@@ -11,7 +11,7 @@ public class PessoaFisica extends Pessoa {
 
     // Construtor
     public PessoaFisica(String nomeOficial, String cpfCnpj, Endereco endereco, String telefone,
-                        String nome, String mae, String pai, String naturalidade, Date dataNascimento) {
+            String nome, String mae, String pai, String naturalidade, Date dataNascimento) {
         super(nomeOficial, cpfCnpj, endereco, telefone);
         this.nome = nome;
         this.mae = mae;
@@ -23,10 +23,12 @@ public class PessoaFisica extends Pessoa {
     public String getNome() {
         return nome;
     }
-    public string  getNomeCivil(){
+
+    public String getNomeCivil() {
         return nomeOficial;
     }
-    public string getCPF(){
+
+    public String getCPF() {
         return cpfCnpj;
     }
 

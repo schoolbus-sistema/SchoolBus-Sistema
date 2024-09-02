@@ -38,9 +38,11 @@ public class CadastroAluno {
         int matriculaAluno = sc.nextInt();
         System.out.println("Digite a serie do aluno que deseja cadastrar: ");
         String serieAluno = sc.next();
-        Aluno aluno = new Aluno(nomeCivilAluno, nomeAluno, maeAluno, paiAluno, naturalidadeAluno, cpfAluno,
-                dataDeNascimentoAluno, ruaAluno, numeroCasaAluno, complementoAluno, bairroAluno, telefoneAluno,
-                matriculaAluno, serieAluno);
+        Endereco endereco = new Endereco(bairroAluno, complementoAluno, numeroCasaAluno, ruaAluno);
+        Aluno aluno = new Aluno(nomeCivilAluno, nomeAluno, cpfAluno, endereco, telefoneAluno, nomeAluno, maeAluno,
+                paiAluno, naturalidadeAluno,
+                dataDeNascimentoAluno, ruaAluno, numeroCasaAluno, complementoAluno, bairroAluno, matriculaAluno,
+                serieAluno);
         System.out.println("\n Aluno " + nomeAluno + " filho de " + maeAluno + " e " + paiAluno + "\n naturalidade "
                 + naturalidadeAluno + ", inscrito no CPF " + cpfAluno + "\n nascido em "
                 + sdf.format(dataDeNascimentoAluno) + "\n reside na rua " + ruaAluno + ", na casa de número "

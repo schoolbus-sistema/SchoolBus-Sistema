@@ -20,15 +20,15 @@ class Escola extends PessoaJuridica{
     
 
 
-    public Escola(String nome, string nomeOficial, string cpfCnpj, string telefone, string nomeFantasia, int numFuncionario, Endereco endereco) {
+    public Escola(String nome, String nomeOficial, String cpfCnpj, String telefone, String nomeFantasia, int numFuncionario, Endereco endereco) {
         super(nomeOficial, cpfCnpj, endereco, telefone, nomeFantasia, numFuncionario);
         this.nome = nome;
         this.alunosMatriculados = new ArrayList<>();
     }
 
     
-    public Escola(String nome, string nomeFantasia,string nomeOficial, string cpfCnpj, string telefone, int numFuncionario, String bairro, String complemento, int numero, String rua) {
-        super(nomeOficial, cpfCnpj, telefone, nomeFantasia, numFuncionario);
+    public Escola(String nome, String nomeFantasia,String nomeOficial, String cpfCnpj, String telefone, int numFuncionario, String bairro, String complemento, int numero, String rua) {
+        super(nomeOficial, cpfCnpj, endereco, telefone, nomeFantasia, numFuncionario);
         this.nome = nome;
         this.endereco = new Endereco(bairro, complemento, numero, rua);
         this.alunosMatriculados = new ArrayList<>();
@@ -54,11 +54,11 @@ class Escola extends PessoaJuridica{
     }
 
     public String getCnpj() {
-        return cnpj;
+        return cpfCnpj;
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+        this.cpfCnpj = cnpj;
     }
 
     public String getTelefone() {

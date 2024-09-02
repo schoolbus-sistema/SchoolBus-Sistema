@@ -10,11 +10,13 @@ public class Aluno extends PessoaFisica {
     private String serie;
     private Escola escola;
     private PontoDeParada pontoDeParada;
+    private String cpf;
 
-    public Aluno(String nomeCivil,String nomeOficial, String cpf, Endereco endereco, String telefone, String nome, String mae, String pai, String naturalidade,
+    public Aluno(String nomeCivil, String nomeOficial, String cpf, Endereco endereco, String telefone, String nome,
+            String mae, String pai, String naturalidade,
             Date dataNascimento, String rua, int numero, String complemento, String bairro,
-             int matricula, String serie) {
-                super(nomeOficial, cpf, endereco, telefone, nome, mae, pai, naturalidade, dataNascimento);
+            int matricula, String serie) {
+        super(nomeOficial, cpf, endereco, telefone, nome, mae, pai, naturalidade, dataNascimento);
         this.nomeCivil = nomeCivil;
         this.nome = nome;
         this.mae = mae;
@@ -40,7 +42,6 @@ public class Aluno extends PessoaFisica {
     public void setNomeCivil(String nomeCivil) {
         this.nomeCivil = nomeCivil;
     }
-
 
     public String getRua() {
         return rua;
@@ -97,9 +98,10 @@ public class Aluno extends PessoaFisica {
     public void setEscola(Escola escola) {
         this.escola = escola;
     }
+
     @Override
     public void apresentarDados() {
-        super.apresentarDados();  // Chama o método apresentarDados() da classe Pessoa
+        super.apresentarDados(); // Chama o método apresentarDados() da classe Pessoa
         System.out.println("Nome Civil: " + nomeCivil);
         System.out.println("Mãe: " + mae);
         System.out.println("Pai: " + pai);
@@ -110,5 +112,5 @@ public class Aluno extends PessoaFisica {
         System.out.println("Escola: " + (escola != null ? escola.toString() : "Não informado"));
         System.out.println("Ponto de Parada: " + (pontoDeParada != null ? pontoDeParada.toString() : "Não informado"));
     }
-   
-   }
+
+}

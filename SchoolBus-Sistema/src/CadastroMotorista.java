@@ -43,10 +43,10 @@ public class CadastroMotorista {
             Date dataDeNascimentoMotorista = sdf.parse(dataStr);
 
             Motorista motorista = new Motorista(nomeCivilMotorista, nomeMotorista, maeMotorista,
-                    paiMotorista, naturalidadeMotorista, cpfMotorista,
+                    null, paiMotorista, naturalidadeMotorista, cpfMotorista,
                     ruaMotorista, complementoMotorista, bairroMotorista, telefoneMotorista,
                     habilitacaoMotorista, tipoHabilitacaoMotorista,
-                    numeroCasaMotorista, tipoMotorista, dataDeNascimentoMotorista);
+                    dataStr, dataStr, numeroCasaMotorista, tipoMotorista, dataDeNascimentoMotorista);
 
             System.out.println("\n motorista " + nomeMotorista + " filho de " + maeMotorista + " e "
                     + paiMotorista + "\n naturalidade " + naturalidadeMotorista + ", inscrito no CPF "

@@ -4,7 +4,7 @@
         // Atributos comuns
         protected String nomeOficial;
         protected String cpfCnpj;
-        protected Endereco endereco;
+        protected static Endereco endereco;
         protected String telefone;
     
         // Construtor
